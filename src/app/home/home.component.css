@@ -1,0 +1,36 @@
+.home-sec {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 3vh;
+}
+
+.home-sec .welcome-text{
+  text-transform: capitalize;
+  font-weight: 700;
+  color: rgba(0, 0, 0, .75);
+}
+
+.home-sec .welcome-text span {
+  color: rgba(0, 0, 0, .5);
+}
+.home-sec .logout-btn {
+  padding: 6px 20px;
+  border: none;
+  background-color: #0089e5;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: capitalize;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.home-sec .logout-btn:hover {
+  background-color: #007acb;
+}
