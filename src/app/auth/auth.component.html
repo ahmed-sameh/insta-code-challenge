@@ -1,1 +1,98 @@
-<p>auth works!</p>
+<div class="auth-sec">
+  <div class="slider-sec">
+    <app-slider class="test"></app-slider>
+  </div>
+
+
+
+  <div class="login-sec">
+
+    <header>
+      <div class="insta-logo">
+        <img src="../../assets/images/logo.svg" alt="instabug logo">
+      </div>
+      <h2>login to instabug</h2>
+    </header>
+
+    <div class="easy-login-btns">
+      <button class="btn google-btn">
+        <img src="../../assets/images/google-icon.png" class="action-icon" alt="google-btn">
+        <span class="text">google</span>
+      </button>
+
+      <button class="btn github-btn">
+    
+        <img src="../../assets/images/git-icon.svg" class="action-icon" alt="github-btn">
+        <span class="text">github</span>
+      </button>
+
+      <button class="btn microsoft-btn">
+        <img src="../../assets/images/microsoft-icon.png" class="action-icon" alt="microsoft-btn">
+        <span class="text">microsoft</span>
+      </button>
+    </div>
+
+
+    <div class="divider">or</div>
+
+
+
+
+    <!-- login form -->
+
+      <form class="login-form" (ngSubmit)="onLogin()" #loginForm="ngForm">
+
+        <div class="input-item mail-field">
+          <label for="email">work Email</label>
+          <input
+          type="email"
+          id="email"
+          class="input-field"
+          name="email"
+          placeholder="you@company.com"
+            ngModel 
+            required 
+            email
+            #mailRef="ngModel"
+            >
+            <p class="mail-error-msg hint-msg" *ngIf="mailRef.invalid && mailRef.touched && !mailRef.pristine">Enter a valid email address!</p>
+            
+        </div>
+
+        <div class="input-item password-field">
+          <label for="password"><span class="text">password</span> <a href="#" class="forget-link">forget password?</a></label>
+          <input
+          type="password"
+          id="password"
+          class="input-field"
+          name="password"
+          placeholder="8+ Characters"
+            ngModel
+            required
+            minlength="6"
+            #passRef="ngModel"
+            >
+            <p class="password-error-msg hint-msg" *ngIf="passRef.invalid && passRef.touched && !mailRef.pristine">Password must be 6 characters or more.</p>
+            
+        </div>
+          
+        <div class="signUp-action">
+          <span>Don't have an account? <a href="#" class="signup"> Sign up</a></span>
+          <a href="#" class="sso">Login via SSO</a>
+        </div>
+        <button type="submit" class="sub-btn" [disabled]="loginForm.invalid">login</button>
+    </form>
+
+
+    <div class="trusted-companies">
+      <div class="text">Trusted by the top companies.</div>
+      <div class="companies-logos">
+        <img src="../../assets/images/comp1.svg" alt="lya logo" class="lya-logo logo">
+        <img src="../../assets/images/comp2.svg" alt="house party" class="house-logo logo">
+        <img src="../../assets/images/comp3.svg" alt="buzz feeed" class="buzz-logo logo">
+        <img src="../../assets/images/comp4.svg" alt="asana" class="asana-logo logo">
+        <img src="../../assets/images/comp5.svg" alt="one plus" class="one-plus-logo logo">
+      </div>
+    </div>
+  </div>
+</div>

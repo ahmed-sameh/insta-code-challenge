@@ -19,6 +19,7 @@
   color: rgba(0, 0, 0, .5);
 }
 .home-sec .logout-btn {
+  font-family: 'Sarabun', sans-serif;
   padding: 6px 20px;
   border: none;
   background-color: #0089e5;
