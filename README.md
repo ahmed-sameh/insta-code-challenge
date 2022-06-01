@@ -1,6 +1,11 @@
 # NgInstabugChallenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
+## To View live Application 
+
+You Can Visit http://ng-iptv.s3-website.me-south-1.amazonaws.com or u can see github pages
+
+
+
 
 ## Development server
 
