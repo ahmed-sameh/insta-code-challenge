@@ -1,6 +1,8 @@
 # NgInstabugChallenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
+# To View live Application 
+
+You Can Visit `[Angular CLI]`(https://github.com/angular/angular-cli) version 13.2.3.
 
 ## Development server
 
