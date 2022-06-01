@@ -2,7 +2,10 @@
 
 ## To View live Application 
 
-You Can Visit http://ng-iptv.s3-website.me-south-1.amazonaws.com or u can see github pages
+-> Application available on AWS through  http://ng-iptv.s3-website.me-south-1.amazonaws.com
+
+
+-> Application available on Github Pages through https://ahmed-sameh.github.io/insta-code-challenge/
 
 
 
