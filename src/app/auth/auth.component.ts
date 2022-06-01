@@ -13,7 +13,7 @@ export class AuthComponent implements OnInit, OnDestroy {
   @ViewChild('loginForm') LoginForm!: NgForm;
   @ViewChild('passRef') passInput!: NgModel;
   @ViewChild('mailRef') mailInput!: NgModel;
-  authSub!: Subscription;
+  authSub?: Subscription;
   userNotExist = false;
   password = '';
   email = '';
@@ -21,15 +21,18 @@ export class AuthComponent implements OnInit, OnDestroy {
   constructor(private authService: AuthService, private router: Router) { }
   
   ngOnInit(): void {
+    // this code check if the user is authenticated is auto navigate to welcome page 
     if(this.authService.userInLogMood) {
-      this.router.navigate(['/home'])
+      this.router.navigate(['/welcome'])
     }
   }
   
   onLogin() {
     let email = this.LoginForm.value.email;
     let password = this.LoginForm.value.password;
+
     this.authService.login(email, password);
+
     this.authSub = this.authService.userAuthenticated.subscribe({
       next: isAuth => {
         if(isAuth){
@@ -39,10 +42,13 @@ export class AuthComponent implements OnInit, OnDestroy {
         }
       }
     })
+
     this.LoginForm.reset();
   }
 
   ngOnDestroy(): void {
-    // this.authSub.unsubscribe()
+    if(this.authSub) {
+      this.authSub.unsubscribe()
+    }
   }
 }

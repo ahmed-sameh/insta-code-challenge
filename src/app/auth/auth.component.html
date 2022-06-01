@@ -39,7 +39,7 @@
 
 
     <!-- login form -->
-    <div class="wrong-data" *ngIf="userNotExist">Your email and/or password are incorrect</div>
+    <div class="wrong-data" id="wrong_data" *ngIf="userNotExist">Your email and/or password are incorrect</div>
 
       <form class="login-form" (ngSubmit)="onLogin()" #loginForm="ngForm">
 
@@ -56,7 +56,7 @@
             email
             #mailRef="ngModel"
           >
-          <p class="mail-error-msg hint-msg" *ngIf="mailRef.invalid && mailRef.touched && !mailRef.pristine">Enter a valid email address!</p>
+          <p id="invalid_email" class="mail-error-msg hint-msg" *ngIf="mailRef.invalid && mailRef.touched && !mailRef.pristine">Enter a valid email address!</p>
             
         </div>
 
@@ -71,7 +71,7 @@
             ngModel
             [emailExist]="email"
             required
-            pattern="^(?=.*?[A-Z])(?=.*?[0-9]).{8,}$"
+            pattern="^(?=.*?[A-Z])(?=.*?[0-9]).{6,}$"
             #passRef="ngModel"
           >
           <p class="password-error-msg hint-msg" *ngIf="passRef.invalid && passRef.touched && !mailRef.pristine">Password must be 6 characters or more.</p>
@@ -82,7 +82,7 @@
           <span>Don't have an account? <a href="#" class="signup"> Sign up</a></span>
           <a href="#" class="sso">Login via SSO</a>
         </div>
-        <button type="submit" class="sub-btn" [disabled]="loginForm.invalid">login</button>
+        <button type="submit" id="submit" class="sub-btn" [disabled]="loginForm.invalid">login</button>
     </form>
 
 

@@ -6,9 +6,9 @@ import { AuthComponent } from './auth/auth.component';
 import { AuthGurd } from './auth/auth.gurd';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/home', pathMatch: 'full' },
+  {path: '', redirectTo: '/welcome', pathMatch: 'full' },
   {path: 'login', component: AuthComponent},
-  {path: 'home', component: HomeComponent, canActivate: [AuthGurd]},
+  {path: 'welcome', component: HomeComponent, canActivate: [AuthGurd]},
   {path: '404', component: AppFailComponent, canActivate: [AuthGurd]},
   {path: '**', redirectTo: '/404'}
 ];
