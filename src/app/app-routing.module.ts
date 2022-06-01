@@ -3,12 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AppFailComponent } from './app-fail/app-fail.component';
 import { AuthComponent } from './auth/auth.component';
+import { AuthGurd } from './auth/auth.gurd';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full' },
   {path: 'login', component: AuthComponent},
-  {path: 'home', component: HomeComponent},
-  {path: '404', component: AppFailComponent},
+  {path: 'home', component: HomeComponent, canActivate: [AuthGurd]},
+  {path: '404', component: AppFailComponent, canActivate: [AuthGurd]},
   {path: '**', redirectTo: '/404'}
 ];
 

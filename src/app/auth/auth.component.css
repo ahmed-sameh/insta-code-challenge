@@ -158,7 +158,13 @@
 
 
 
-
+.wrong-data {
+  background-color: #fce6e2;
+  border: 1px solid #ff7a7a;
+  padding: 10px 20px;
+  border-radius: 4px;
+  color: #5e5e5e;
+}
 
 
 

@@ -12,7 +12,7 @@ export class SliderComponent implements OnInit, OnDestroy {
   resetInterval: any;
 
   ngOnInit(): void {
-      // this.sliding()
+    this.sliding()
   }
 
   sliding() {

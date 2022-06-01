@@ -8,7 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { AppFailComponent } from './app-fail/app-fail.component';
 import { SliderComponent } from './auth/slider/slider.component';
 import { FormsModule } from '@angular/forms';
-import { AuthService } from './auth/auth.service';
+import { EmailExistance } from './auth/password.validator.directive';
 
 @NgModule({
   declarations: [
@@ -16,14 +16,15 @@ import { AuthService } from './auth/auth.service';
     AuthComponent,
     HomeComponent,
     AppFailComponent,
-    SliderComponent
+    SliderComponent,
+    EmailExistance
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [AuthService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

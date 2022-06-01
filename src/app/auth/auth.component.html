@@ -39,40 +39,42 @@
 
 
     <!-- login form -->
+    <div class="wrong-data" *ngIf="userNotExist">Your email and/or password are incorrect</div>
 
       <form class="login-form" (ngSubmit)="onLogin()" #loginForm="ngForm">
 
         <div class="input-item mail-field">
           <label for="email">work Email</label>
           <input
-          type="email"
-          id="email"
-          class="input-field"
-          name="email"
-          placeholder="you@company.com"
-            ngModel 
+            type="email"
+            id="email"
+            class="input-field"
+            name="email"
+            placeholder="you@company.com"
+            [(ngModel)]="email"
             required 
             email
             #mailRef="ngModel"
-            >
-            <p class="mail-error-msg hint-msg" *ngIf="mailRef.invalid && mailRef.touched && !mailRef.pristine">Enter a valid email address!</p>
+          >
+          <p class="mail-error-msg hint-msg" *ngIf="mailRef.invalid && mailRef.touched && !mailRef.pristine">Enter a valid email address!</p>
             
         </div>
 
         <div class="input-item password-field">
           <label for="password"><span class="text">password</span> <a href="#" class="forget-link">forget password?</a></label>
           <input
-          type="password"
-          id="password"
-          class="input-field"
-          name="password"
-          placeholder="8+ Characters"
+            type="password"
+            id="password"
+            class="input-field"
+            name="password"
+            placeholder="8+ Characters"
             ngModel
+            [emailExist]="email"
             required
-            minlength="6"
+            pattern="^(?=.*?[A-Z])(?=.*?[0-9]).{8,}$"
             #passRef="ngModel"
-            >
-            <p class="password-error-msg hint-msg" *ngIf="passRef.invalid && passRef.touched && !mailRef.pristine">Password must be 6 characters or more.</p>
+          >
+          <p class="password-error-msg hint-msg" *ngIf="passRef.invalid && passRef.touched && !mailRef.pristine">Password must be 6 characters or more.</p>
             
         </div>
           
