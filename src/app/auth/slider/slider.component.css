@@ -22,11 +22,7 @@
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
-<<<<<<< HEAD
   margin-top: 20%;
-=======
-  margin-top: 15vh;
->>>>>>> 4766ae3a9a28b0f6147344a51b49959b761e43a0
   scrollbar-width: none;
 }
 
