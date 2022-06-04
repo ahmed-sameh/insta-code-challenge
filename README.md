@@ -4,6 +4,10 @@
 
 
 
+-> Application available also on AWS S3 http://ng-iptv.s3-website.me-south-1.amazonaws.com/login
+
+
+
 
 ## Development server
 
